@@ -151,7 +151,7 @@ class Project(Job, EnableMixIn):
             entry = 'build'
         else:
             entry = 'buildWithParameters'
-        resp = self.handle_req('POST', entry, params=params)
+        resp = self.handle_req('POST', entry, data=params)
         return QueueItem(self.jenkins, resp.headers['Location'])
 
     def get_build(self, number):
