@@ -12,7 +12,7 @@ with open('README.md') as f:
     readme = f.read()
 
 requires = [
-    'requests >= 2.23.0'
+    'requests'
 ]
 
 setup(
@@ -26,10 +26,9 @@ setup(
     author_email=about['__author_email__'],
     packages=['api4jenkins'],
     package_data={'': ['LICENSE']},
-    python_requires='>=3.7',
+    python_requires='>=3.6',
     install_requires=requires,
     license=about['__license__'],
-    keywords=["RESTAPI", "Jenkins"],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -38,12 +37,11 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.11',
-        'Topic :: Utilities',
+        'Topic :: Software Development',
     ],
     project_urls={
         'Documentation': about['__documentation__'],

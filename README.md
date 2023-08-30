@@ -1,8 +1,6 @@
-[![Unit Test](https://github.com/joelee2012/api4jenkins/actions/workflows/unittest.yml/badge.svg?branch=master)](https://github.com/joelee2012/api4jenkins/actions/workflows/unittest.yml)
-[![Integration Test](https://github.com/joelee2012/api4jenkins/actions/workflows/integration.yml/badge.svg?branch=master)](https://github.com/joelee2012/api4jenkins/actions/workflows/integration.yml)
+![Tests](https://github.com/joelee2012/api4jenkins/workflows/Tests/badge.svg?branch=master)
 ![CodeQL](https://github.com/joelee2012/api4jenkins/workflows/CodeQL/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/joelee2012/api4jenkins/badge.svg?branch=master)](https://coveralls.io/github/joelee2012/api4jenkins?branch=master)
-[![codecov](https://codecov.io/gh/joelee2012/api4jenkins/branch/master/graph/badge.svg?token=YGM4CIB149)](https://codecov.io/gh/joelee2012/api4jenkins)
 ![PyPI](https://img.shields.io/pypi/v/api4jenkins)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/api4jenkins)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/api4jenkins)
@@ -10,9 +8,9 @@
 ![GitHub](https://img.shields.io/github/license/joelee2012/api4jenkins)
 
 
-# Jenkins Python Client
+# Api4jenkins
 
-[Python3](https://www.python.org/) client library for [Jenkins API](https://www.jenkins.io/doc/book/using/remote-access-api/).
+[Api4jenkins](https://github.com/joelee2012/api4jenkins) is a Jenkins REST API client for [Python3](https://www.python.org/) to access [Jenkins](https://jenkins.io/) [Remote access API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) programmatically. It provides full functionalities to manage Job, Build, Credential, View, Queue, Plugins, Node, and System.
 
 # Features
 
@@ -33,8 +31,8 @@ python3 -m pip install api4jenkins
 
 ```python
 >>> from api4jenkins import Jenkins
->>> client = Jenkins('http://127.0.0.1:8080/', auth=('admin', 'admin'))
->>> client.version
+>>> j = Jenkins('http://127.0.0.1:8080/', auth=('admin', 'admin'))
+>>> j.version
 '2.176.2'
 >>> xml = """<?xml version='1.1' encoding='UTF-8'?>
 ... <project>
@@ -44,9 +42,9 @@ python3 -m pip install api4jenkins
 ...     </hudson.tasks.Shell>
 ...   </builders>
 ... </project>"""
->>> client.create_job('path/to/job', xml)
+>>> j.create_job('freestylejob', xml)
 >>> import time
->>> item = client.build_job('path/to/job')
+>>> item = j.build_job('freestylejob')
 >>> while not item.get_build():
 ...      time.sleep(1)
 >>> build = item.get_build()
