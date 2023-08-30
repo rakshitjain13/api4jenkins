@@ -1,0 +1,57 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "actions": [
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user admin",
+          "userId": "admin",
+          "userName": "admin"
+        },
+        {
+          "_class": "org.jenkinsci.plugins.workflow.cps.replay.ReplayCause",
+          "shortDescription": "Replayed #1"
+        }
+      ]
+    },
+    {
+      "_class": "hudson.model.ParametersAction",
+      "parameters": [
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "parameter1",
+          "value": "value1"
+        },
+        {
+          "_class": "hudson.model.StringParameterValue",
+          "name": "parameter2",
+          "value": "value2"
+        }
+      ]
+    }
+  ],
+  "artifacts": [],
+  "building": false,
+  "description": null,
+  "displayName": "#52",
+  "duration": 324447,
+  "estimatedDuration": 197743,
+  "executor": null,
+  "fullDisplayName": "Level1_WorkflowJob1 #52",
+  "id": "52",
+  "keepLog": false,
+  "number": 52,
+  "queueId": 667,
+  "result": "FAILURE",
+  "timestamp": 1559281453240,
+  "url": "http://0.0.0.0:8080/job/Level1_WorkflowJob1/52/",
+  "changeSets": [],
+  "culprits": [],
+  "nextBuild": null,
+  "previousBuild": {
+    "number": 51,
+    "url": "http://0.0.0.0:8080/job/Level1_WorkflowJob1/51/"
+  }
+}
